@@ -1,0 +1,238 @@
+:root{
+  --very-dark-blue-dark: hsl(230, 17%, 14%);
+  --very-dark-blue-dark: hsl(232, 19%, 15%);
+  --dark-desaturated-blue-dark: hsl(228, 28%, 20%);
+  --desaturated-blue-dark: hsl(228, 34%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --light-grayish-blue: hsl(227, 47%, 96%);
+  --dark-grayish-blue: hsl(228, 12%, 44%);
+  --very-dark-blue: hsl(230, 17%, 14%);
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: hsl(37, 97%, 70%);
+  --instagram2:  hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --toggle: hsl(230, 22%, 74%);
+  --toggle-gradient: hsl(210, 78%, 56%), hsl(146, 68%, 55%);
+}
+html{
+  font-family: 'Inter', sans-serif;
+}
+@media screen and (min-width: 64rem){
+  body{
+    height: 100vh;
+  }
+}
+a{
+  color: black;
+}
+a:hover > h2{
+  opacity: .7;
+}
+/* -------------------- COMPONENTES -------------------- */
+/* -------------------- SWITCH -------------------- */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 23px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, var(--toggle-gradient));
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--very-dark-blue-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color: var(--dark-desaturated-blue-dark);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* -------------------- ESTILOS -------------------- */
+.title-header > a{
+  color: black;
+}
+.dark-mode{
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 80rem){
+  header > hr{
+    display: none;
+  }
+  header{
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 120rem){
+  header{
+    padding-left: 13rem !important;
+    padding-right: 13rem !important;
+  }
+}
+/* -------------------- MAIN -------------------- */
+@media screen and (min-width: 64rem){
+  .main-content.container{
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* -------------------- CARDS -------------------- */
+.card{
+  background-color: var(--light-grayish-blue);
+  border-radius: 5px;
+}
+.title-card{
+  justify-content: center;
+  align-items: center;
+}
+.title-card > img{
+  width: 20px;
+}
+.statistics > small{
+  letter-spacing: 4px;
+  font-size: .7rem;
+}
+.statistics > .result{
+  justify-content: center;
+}
+.statistics > p{
+  color: var(--lime-green);
+  font-size: .8rem;
+  font-weight: bold;
+}
+.card:first-child{
+  border-top: medium solid var(--facebook);
+}
+.card:nth-child(2){
+  border-top: medium solid var(--twitter);
+}
+.card:nth-child(3){
+  border-top: medium solid transparent;
+  border-image: linear-gradient(90deg, var(--instagram), var(--instagram2)) 1;
+}
+.card:nth-child(4){
+  border-top: medium solid var(--youTube);
+}
+@media screen and (min-width: 48rem){
+  .redes-sociales{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+}
+@media screen and (min-width: 80rem){
+  .redes-sociales{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -------------------- OVER VIEW -------------------- */
+.overview-card{
+  background-color: var(--light-grayish-blue);
+  border-radius: 5px;
+}
+.card-body,
+.card-title{
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title > img{
+  width: 20px;
+}
+.result{
+  align-items: center;
+}
+.result > img{
+  width: 5px;
+  height: 5px;
+  margin-right: .2rem;
+}
+.result > p{
+  color: var(--lime-green);
+  font-weight: bold;
+  font-size: .8rem;
+}
+p.error{
+  color: var(--bright-red);
+}
+@media screen and (min-width: 48rem){
+  .overview-cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+}
+@media screen and (min-width: 80rem){
+  .overview-cards{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -------------------- ATTRIBUTION -------------------- */
+.attribution a{
+  color: var(--lime-green)
+}
+
+.dark-mode-class{
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+.dark-mode-card{
+  background-color: var(--dark-desaturated-blue-dark);
+  color: var(--white);
+}
+
